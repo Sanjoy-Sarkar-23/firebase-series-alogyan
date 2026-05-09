@@ -1,32 +1,13 @@
 {
   "project_info": {
-    "project_number": "141722230980",
-    "project_id": "testproject-e074f",
-    "storage_bucket": "testproject-e074f.firebasestorage.app"
+    "project_number": "737339495290",
+    "project_id": "fir-series-8fb73",
+    "storage_bucket": "fir-series-8fb73.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:141722230980:android:770e9d3f31a76b8a232991",
-        "android_client_info": {
-          "package_name": "com.example.ai_generator"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCD3SllmL4WkQ3-wof9nmRXbosiPOprgn4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:141722230980:android:2aaaf5c5e3de345a232991",
+        "mobilesdk_app_id": "1:737339495290:android:d506189f0807bf4f1f3cc3",
         "android_client_info": {
           "package_name": "com.example.firebase_series"
         }
@@ -34,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCD3SllmL4WkQ3-wof9nmRXbosiPOprgn4"
+          "current_key": "AIzaSyChg9zDdXyrZMfokZqpX30Yv8TwPkV6BBI"
         }
       ],
       "services": {

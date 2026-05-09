@@ -8,7 +8,7 @@ class AppThemes {
     primaryColor: const Color(0xFF6C63FF),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: Colors.grey.shade100,
+      fillColor: Colors.black,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: BorderSide.none,

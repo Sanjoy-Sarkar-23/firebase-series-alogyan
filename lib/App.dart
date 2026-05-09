@@ -1,3 +1,4 @@
+import 'package:firebase_series/screen/LoadingScreen.dart';
 import 'package:firebase_series/screen/homeScreen.dart';
 import 'package:firebase_series/screen/login.dart';
 import 'package:firebase_series/theme/appTheme.dart';
@@ -10,10 +11,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-       theme: AppThemes.lightTheme,
+      navigatorKey: Get.key,
+      theme: AppThemes.lightTheme,
       darkTheme: AppThemes.darkTheme,
       themeMode: ThemeMode.system,
-      home: LoginScreen(),
+      initialRoute: '/',
+      // home: LoginScreen(),
+      getPages: [
+        GetPage(name: '/', page: () => LoadingScreen()),
+        GetPage(name: '/login', page: () => LoginScreen()),
+        GetPage(name: '/home', page: () => HomeScreen()),
+      ],
     );
   }
 }
