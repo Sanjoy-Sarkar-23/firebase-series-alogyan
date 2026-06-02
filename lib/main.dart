@@ -10,7 +10,8 @@ import 'package:get/get.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  Get.put(AuthController()); // Register AuthController with GetX
+  // Get.put(AuthController()); // Register AuthController with GetX
+
   runApp(const MyApp());
 }
 
