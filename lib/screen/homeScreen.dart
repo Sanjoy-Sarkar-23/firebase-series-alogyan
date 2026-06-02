@@ -86,7 +86,7 @@ class HomeScreen extends StatelessWidget {
 
               onChanged: (value) {
                 // This main functions  for updating task
-                ac.toggleComplete(task);
+                ac.toggleComplete(task ,value);
               },
             ),
 

@@ -26,6 +26,8 @@ android {
        applicationId = "com.example.firebase_series"
        minSdk = flutter.minSdkVersion // Standard for most Firebase apps
        targetSdk = 35
+       versionCode = flutter.versionCode
+       versionName = flutter.versionName
     }
 
     buildTypes {

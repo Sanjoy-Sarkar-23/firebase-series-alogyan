@@ -15,15 +15,37 @@ class AuthController extends GetxController {
 
   @override
   void onInit() {
-    Future.delayed(const Duration(seconds: 5), () {
-      Get.offAllNamed('/login');
-      print('3 second has passed.'); // Prints after 1 second.
-    });
+    // Future.delayed(const Duration(seconds: 5), () {
+    //   Get.offAllNamed('/login');
+    //   print('3 second has passed.'); // Prints after 1 second.
+    // });
+
+      // 2. Initialize the Rx variable with the current user state
+    firebaseUser = Rx<User?>(_auth.currentUser);
+
+    // 3. Bind the Rx variable to the actual Firebase stream
+    firebaseUser.bindStream(_auth.authStateChanges());
+
+    // 4. Ever listens to every change of firebaseUser and calls the worker function
+    ever(firebaseUser, _setInitialScreen);
     // loadDemoTasks();
     streamTasks();
     super.onInit();
   }
 
+
+ // 5. This worker function automatically routes the user based on login status
+  void _setInitialScreen(User? user) {
+    if (user == null) {
+      print("User is signed out. Routing to login.");
+      Get.offAllNamed('/login');
+    } else {
+      print("User is signed in: ${user.email}. Routing to home.");
+      // Initialize task streaming only after a valid user is present
+      streamTasks(); 
+      Get.offAllNamed('/home'); // Corrected string escape path '\home' to '/home'
+    }
+  }
   // 🔐 SIGN UP
   Future<void> register(String email, String password) async {
     try {
@@ -129,10 +151,10 @@ class AuthController extends GetxController {
         );
   }
 
-  void toggleComplete(TaskModel task) {
+  void toggleComplete(TaskModel task, bool? value) {
     print("start.................");
     _firestore.collection("tasks").doc(task.id).update({
-      "isCompleted": true,
+      "isCompleted": value,
       "taskDate": DateTime.now(),
     });
     print("process");
